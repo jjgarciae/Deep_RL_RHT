@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#SBATCH --partition=##partition name (CHANGE)
 #SBATCH --nodelist=##node to work with ex.: node-02 (CHANGE)
 #SBATCH --ntasks=1
+#SBATCH --get-user-env            ## Exports all local SHELL vars
+#SBATCH --time=72:00:00 ##(CHANGE)
 #SBATCH --cpus-per-task=##number_of_cpus ex.: 32 (CHANGE)
 #SBATCH --mem-per-cpu=##RAM per cpu ex.:4GB (CHANGE)
-#SBATCH --get-user-env  ## Exports all local SHELL vars
+#SBATCH --partition=##partition name (CHANGE)
 ##SBATCH --qos=long ##uncoment for runs longer than 10 days
-#SBATCH --time=72:00:00 ##(CHANGE)
 #SBATCH --job-name=##JOB_NAME (CHANGE)
 #SBATCH --output=slurm-%j.out 
 #SBATCH --error=slurm-%j.err
