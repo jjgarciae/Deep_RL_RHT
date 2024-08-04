@@ -21,8 +21,8 @@ plt.rcParams["font.family"] = PLOT_FONT
 def save_fig_df(
     fig_save_path: str,
     df: Optional[pd.DataFrame] = None,
-    x: Optional[np.typing.ArrayLike] = None,
-    y: Optional[np.typing.ArrayLike] = None,
+    x: Optional[np.ndarray] = None,
+    y: Optional[np.ndarray] = None,
     xlabel: Optional[str] = None,
     ylabel: Optional[str] = None,
     **kwargs,
