@@ -1,7 +1,6 @@
 import logging
 import sys
 import time
-import warnings
 from pathlib import Path
 from typing import Literal, Optional
 
@@ -29,7 +28,6 @@ from src.utils import (
     set_logging,
     str_to_tuple_or_list,
     timer,
-    tuple_or_list_to_str,
 )
 
 
@@ -171,17 +169,6 @@ def approximated_simulation_runs(
         sum([len(agent.visited_states) for agent in agent_list]) / n_runs
     )
 
-    # output mean number of visited states and mean optimal state
-    # WARNING: optimal state is the rounded mean of all obtained optimal states
-    mean_optimal_state = [round(material) for material in mean_last_state]
-    mean_optimal_state_label = tuple_or_list_to_str([mean_optimal_state])
-    print(f"MEAN optimal state is: {mean_optimal_state}")
-    try:
-        print(
-            f"\nWith an associated HTC of: {'{:.3f}'.format(env.htc_values[mean_optimal_state_label].values[0])} W/m²K"
-        )
-    except KeyError:
-        warnings.warn(f"HTC value of {mean_optimal_state_label} not stored.")
     print(
         f"\nMean number of visited states: {n_mean_visited_states}",
         f"/{len(env_list[0].state_space)}" if exists(env_list[0].state_space) else "",

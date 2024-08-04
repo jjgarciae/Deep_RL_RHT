@@ -192,11 +192,6 @@ def approximated_simulation(
     timer(start_time, time.time())
 
     # ------------- output relevant data -------------
-    # Output the OPTIMAL STATE.
-    # With this aproximated method, we will assume optimal state is the state
-    # where the agent tends to end.
-    # Because of that, we will perform a very long simulation with a greedy
-    # policy and output the end state as the OPTIMAL STATE.
     _, last_reward, _, last_state, last_action = agent.greedy_simulation(
         q_net=agent.q_net,
         environment=copy.deepcopy(env),  # [3]
@@ -205,8 +200,8 @@ def approximated_simulation(
         device=device,
     )
     print(
-        f"The optimal state is: {last_state}",
-        f"\nWith an associated reward of: {'{:.3f}'.format(last_reward)} W/m²K",
+        f"Last state is: {last_state}",
+        f"\nWith an associated reward of: {'{:.3f}'.format(last_reward)}",
     )
     logging.info(f"Associated last action was {last_action}")
     logging.info(
@@ -225,7 +220,6 @@ def approximated_simulation(
             else ""
         )
     )
-    logging.debug(f"Which are: {agent.visited_states}")
 
     # store the obtained states htc into hdf and csv (if selected)
     if save_computed_htc:
