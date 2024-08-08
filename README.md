@@ -85,24 +85,6 @@ pip install -e .[dev]
 
 If, after adding new dependencies, custom submodules are not found, [set again `PYTHONPATH` environment variable.](#recreate-this-environment)
 
-### Fonts
-
-If employed fonts are not available in your PC, you can get them through conda-forge:
-
-```{bash}
-conda activate env_name_py3.9 
-conda install -c conda-forge -y mscorefonts
-```
-
-Or, alternatively, [you can install them in your PC](https://stackoverflow.com/questions/42097053/matplotlib-cannot-find-basic-fonts/49884009#49884009):
-
-```{bash}
-sudo apt install msttcorefonts -qq
-rm ~/.cache/matplotlib -rf           # remove cache
-```
-
-This last method will install `msttcorefonts` in path `/usr/share/fonts/truetype/msttcorefonts`.
-
 ## Acknowledgements
 
 ### Our thesis directors
@@ -126,3 +108,21 @@ If you find some problems or you have anything to discuss about the code, feel f
 ### Template
 
 Template for Python libraries by Komorebi-AI
+
+### Fonts
+
+If employed fonts are not available in your PC, you can get them through conda-forge:
+
+```{bash}
+conda activate env_name_py3.9 
+conda install -c conda-forge -y mscorefonts
+```
+
+Or, alternatively, [you can install them in your PC](https://stackoverflow.com/questions/42097053/matplotlib-cannot-find-basic-fonts/49884009#49884009):
+
+```{bash}
+sudo apt install msttcorefonts -qq
+rm ~/.cache/matplotlib -rf           # remove cache
+```
+
+This last method will install `msttcorefonts` in path `/usr/share/fonts/truetype/msttcorefonts`.
