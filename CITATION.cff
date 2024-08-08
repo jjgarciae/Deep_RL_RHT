@@ -1,0 +1,21 @@
+cff-version: 0.0.0
+message: "If following software was useful, please cite it as below."
+authors:
+  - family-names: Ortiz Mansilla
+    given-names: Eva
+    orcid: https://orcid.org/0009-0005-6278-4810
+  - family-names: García Esteban
+    given-names: Juan José
+    orcid: https://orcid.org/0000-0002-4306-3453
+  - family-names: Bravo Abad
+    given-names: Jorge
+    orcid: https://orcid.org/0000-0001-6876-8022
+  - family-names: Cuevas
+    given-names: Juan Carlos
+    orcid: https://orcid.org/0000-0001-7421-0682
+title: "Deep Reinforcement Learning for Radiative Heat Transfer Optimization Problems"
+version: 1.0.0
+identifiers:
+  - type: doi
+    value: # WIP
+date-released: # WIP
