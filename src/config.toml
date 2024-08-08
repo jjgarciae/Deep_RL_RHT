@@ -1,0 +1,93 @@
+# ----------- logging config -----------
+[logging]
+debug_counter = 1000
+
+# ----------- RHT generic config -----------
+[RHT.environment]
+materials = [0, 1]
+gap_nm = 10
+layer_width_nm = 5
+
+n_layers = 16
+
+n_episode_steps = 64
+start_state = "zeros" # + info: `environment.__init__`
+
+htc_path = "./data/HTC"
+reward_def = "htc_delta"
+ref_state_label = "1 0 0 1 1 0 0 1 1 0 0 1 1 0 0 1" # only necessary if `reward_def` is `htc_delta`
+reward_reduction_factor = 1e5
+
+[RHT.plots]
+reward_curve_mode = ["last_reward", "return", "best_reward", "best_htc"]
+reward_curve_steps_per_point = 64 # "None" to avoid DRL reward curves
+epsilon = true # epsilon curve
+lr = false # lr curve
+
+# ----------- dummy algorithm config -----------
+[dummy]
+generic_save_folder = "dummy"
+saving_frequency = 10000
+
+# ----------- RL algortihms and dummy simulation config -----------
+[apprx_nd_dummy]
+generic_save_folder = "apprx_nd_dummy"
+
+# ----------- Approximated Sarsa algorithm config -----------
+[DRL.Sarsa]
+min_eps = 0.001
+min_lr = 0.0 
+
+# RHT DRL Sarsa config
+[DRL.Sarsa.RHT]
+generic_save_folder = "DRL/RHT_Sarsa"
+
+[DRL.Sarsa.RHT.hiperparams]
+hidden_layers = 4
+hidden_neur = 64 
+batch_size = 32
+decorrelated = false
+step_count = true
+
+episode_start_state = "initial" # + info: DRL_agent.train kwargs
+max_steps = 30000
+tol_loss = -inf
+
+epsilon = 1
+reduce_eps = 4e-5
+lr = 1e-3
+reduce_perc_lr = 0.0
+discount_rate = 0.99
+
+# ----------- Approximated double Q-learning algorithm config -----------
+[DRL.double_Q-learning]
+min_eps = 0.001
+min_lr = 0.0 
+
+# RHT DRL double Q-learning config
+[DRL.double_Q-learning.RHT]
+generic_save_folder = "DRL/RHT_double_Q-learning"
+
+# specific RHT DRL double Q-learning config
+[DRL.double_Q-learning.RHT.hiperparams]
+hidden_layers = 4
+hidden_neur = 64 
+batch_size = 32
+decorrelated = false
+step_count = true
+
+episode_start_state = "initial" # + info: DRL_agent.train kwargs
+max_steps = 20000
+tol_loss = -inf
+
+memory_size = 10000
+n_batch_per_step = 4
+n_new_experiences_per_step = 4
+target_estimation_mode = "double" # + info: DRL_agent.train args
+n_steps_for_target_net_update = 5000
+
+epsilon = 1
+reduce_eps = 9e-5
+lr = 1e-4
+reduce_perc_lr = 0.0
+discount_rate = 0.99
