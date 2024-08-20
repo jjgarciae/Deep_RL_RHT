@@ -15,7 +15,7 @@ authors:
     orcid: https://orcid.org/0000-0001-7421-0682
 title: "Deep Reinforcement Learning for Radiative Heat Transfer Optimization Problems"
 version: 1.0.0
-date-released: # WIP
+date-released: 2024-08-20
 identifiers:
   - type: doi
     value: # WIP
