@@ -25,7 +25,7 @@ More specifically, relevant code is available `/notebook` folder:
 - `A2C_PPO_Optuna.ipynb`: Relevant code for the A2C and PPO algorithms, also including the Optuna hyperparameter search algorithm. Code is ready to be executed.
 - `SARSA.ipynb`: A representative example about the execution of SARSA algorithm. It's suggested to follow it in order to execute `src/RL_simulations/RHT_simulation_RUNS.py`.
 - `double_DQN.ipynb`: A representative example about the execution of Double DQN algorithm. It's suggested to follow it in order to execute `src/RL_simulations/RHT_simulation_RUNS.py`.
-- `random.ipynb`: Relevant code for the random algorithm. Code is ready to be executed.
+- `Random_search.ipynb`: Relevant code for the random algorithm. Code is ready to be executed.
 
 ## Environment basics
 
