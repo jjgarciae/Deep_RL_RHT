@@ -107,7 +107,7 @@ If you find some problems or you have anything to discuss about the code, feel f
 
 ### Template
 
-Template for Python libraries by Komorebi-AI
+[Template for Python libraries by Komorebi-AI](https://github.com/Komorebi-AI/python-template)
 
 ### Fonts
 
